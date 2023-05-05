@@ -1,13 +1,91 @@
 var tura=0;
 var oczka=new Array('-','-','-','-','-','-','-','-','-');
 
+var wygraneX=0;
+var wygraneY=0;
+
+document.getElementById("wygraneX").innerHTML=wygraneX;
+document.getElementById("wygraneY").innerHTML=wygraneY;
+
+function reset(){
+  document.getElementById("wygraneX").innerHTML=wygraneX;
+  document.getElementById("wygraneY").innerHTML=wygraneY; 
+
+  tura=0;
+
+  for(var i=0; i<9; i++){
+    oczka[i]='-'
+    document.getElementById("k"+(i+1)).innerHTML = "";
+  }
+}
+
 function sprawdzWygrana(t){
-  if(oczka[0]==oczka[1] && oczka[1]==oczka[2]){
+  if(oczka[0]==oczka[1] && oczka[1]==oczka[2] && oczka[0]!='-'){
     if(oczka[0]=='x'){
-      console.log('x wygrywa');
+      wygraneX++;
+      reset();
     }else if(oczka[0]=='o'){
-      console.log('o wygrywa');
+      wygraneY++;
+      reset();
     }
+  }else if(oczka[3]==oczka[4] && oczka[4]==oczka[5] && oczka[3]!='-'){
+    if(oczka[3]=='x'){
+      wygraneX++;
+      reset();
+    }else if(oczka[3]=='o'){
+      wygraneY++;
+      reset();
+    }
+  }else if(oczka[6]==oczka[7] && oczka[7]==oczka[8] && oczka[6]!='-'){
+    if(oczka[6]=='x'){
+      wygraneX++;
+      reset();
+    }else if(oczka[6]=='o'){
+      wygraneY++;
+      reset();
+    }
+  }else if(oczka[0]==oczka[3] && oczka[3]==oczka[6] && oczka[0]!='-'){
+    if(oczka[0]=='x'){
+      wygraneX++;
+      reset();
+    }else if(oczka[0]=='o'){
+      wygraneY++;
+      reset();
+    }
+  }else if(oczka[1]==oczka[4] && oczka[4]==oczka[7] && oczka[1]!='-'){
+    if(oczka[1]=='x'){
+      wygraneX++;
+      reset();
+    }else if(oczka[1]=='o'){
+      wygraneY++;
+      reset();
+    }
+  }else if(oczka[2]==oczka[5] && oczka[5]==oczka[8] && oczka[2]!='-'){
+    if(oczka[2]=='x'){
+      wygraneX++;
+      reset();
+    }else if(oczka[2]=='o'){
+      wygraneY++;
+      reset();
+    }
+  }else if(oczka[0]==oczka[4] && oczka[4]==oczka[8] && oczka[0]!='-'){
+    if(oczka[0]=='x'){
+      wygraneX++;
+      reset();
+    }else if(oczka[0]=='o'){
+      wygraneY++;
+      reset();
+    }
+  }else if(oczka[2]==oczka[4] && oczka[4]==oczka[6] && oczka[2]!='-'){
+    if(oczka[2]=='x'){
+      wygraneX++;
+      reset();
+    }else if(oczka[2]=='o'){
+      wygraneY++;
+      reset();
+    }
+  }else if(t==9){
+    reset();
   }
 }
 
@@ -89,3 +167,4 @@ const btn8 = document.getElementById("k8");
 btn8.addEventListener("click", function(){gra("k8")});
 const btn9 = document.getElementById("k9");
 btn9.addEventListener("click", function(){gra("k9")});
+
