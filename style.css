@@ -1,23 +1,71 @@
 body{
   background-color: rgb(25,25,25);
+  color: white;
 }
 
 .plansza{
-  height: 750px;
-  width: 750px;
+  height: 520px;
+  width: 420px;
   background-color: rgb(15,15,15);
   border-radius:20px;
   position: absolute;
   top:50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 24px 15px rgba(0, 0, 0, 1);
+}
+
+#wyniki{
+  height: 100px;
+}
+
+.szpalta{
+  font-size: 20px;
+  position: relative;
+  margin-top: 30px;
+  width: 150px;
+  height: 30px;
+  border: 5px solid grey;
+  border-radius: 20px;
+  float:left;
+}
+
+.szpalta:nth-child(1){
+  margin-left: 10px;
+}
+
+.szpalta:nth-child(2){
+  float:right;
+  margin-right: 10px;
+}
+
+.szpalta div{
+  float: left;
+}
+
+.text{
+  width:150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#wygraneX{
+  float:right;
+  margin-right: 20px;
+}
+
+#wygraneY{
+  float: left;
+  margin-left: 20px;
 }
 
 .kwadracik{
   position: relative;
   float:left;
-  height: 230px;
-  width: 230px;
+  height: 120px;
+  width: 120px;
   border: 10px solid white;
   cursor: pointer;
 }
@@ -34,8 +82,12 @@ body{
   border-radius: 0px 0px 0px 20px;
 }
 
+.kwadracik:nth-child(9){
+  border-radius: 0px 0px 20px 0px;
+}
+
 .krzyzR{
-  width: 20px;
+  width: 10px;
   height: 90px;
   background-color: rgb(3, 157, 252);
   position: absolute;
@@ -46,7 +98,7 @@ body{
 }
 
 .krzyzL{
-  width: 20px;
+  width: 10px;
   height: 90px;
   background-color: rgb(3, 157, 252);
   position: absolute;
@@ -66,3 +118,37 @@ body{
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.minikrzyzR{
+  width: 4px;
+  height: 27px;
+  background-color: rgb(3, 157, 252);
+  position: absolute;
+  top:50%;
+  left: 20%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-radius: 20px;
+}
+
+.minikrzyzL{
+  width: 4px;
+  height: 27px;
+  background-color: rgb(3, 157, 252);
+  position: absolute;
+  top:50%;
+  left: 20%;
+  transform: translate(-50%, -50%) rotate(135deg);
+  border-radius: 20px;
+}
+
+.miniKolo{
+  width: 20px;
+  height: 20px;
+  border: 3px solid #ff3863;
+  border-radius: 100%;
+  position: absolute;
+  top:50%;
+  right: 0%;
+  transform: translate(-50%, -50%);
+}
+
