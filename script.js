@@ -1,13 +1,23 @@
 var round=0;
+var match=0;  
 var mesh=new Array('-','-','-','-','-','-','-','-','-');
 
 var winsX=0;
 var winsO=0;
 
+document.getElementById("x").style.boxShadow="0px 0px 19px 0px rgba(255, 255, 255, 1)";
+
 function reset(){
   document.getElementById("after").innerHTML="";
   round=0;
-
+  match++;
+  
+  if(match%2==0){
+    document.getElementById("x").style.boxShadow="0px 0px 19px 0px rgba(255, 255, 255, 1)";
+  }else{
+    document.getElementById("o").style.boxShadow="0px 0px 19px 0px rgba(255, 255, 255, 1)";
+  }
+  
   for(var i=0; i<9; i++){
     mesh[i]='-';
     document.getElementById("s"+(i)).innerHTML = "";
@@ -65,18 +75,26 @@ function checkWin(n){
         document.getElementById("winsO").innerHTML=winsO; 
       }
     }
+    document.getElementById("x").style.boxShadow="0px 0px 0px 0px rgba(255, 255, 255, 1)";
+    document.getElementById("o").style.boxShadow="0px 0px 0px 0px rgba(255, 255, 255, 1)";
     afterGame();
   }else if(round==9){
+    document.getElementById("x").style.boxShadow="0px 0px 0px 0px rgba(255, 255, 255, 1)";
+    document.getElementById("o").style.boxShadow="0px 0px 0px 0px rgba(255, 255, 255, 1)";
     afterGame()
   }
 }
 
 function checkMesh(n,s){
   if(mesh[n]=='-'){
-    if(round%2==0){
+    if((match%2==0 && round%2==0) || (match%2==1 && round%2==1)){
+      document.getElementById("x").style.boxShadow="0px 0px 0px 0px rgba(255, 255, 255, 1)";
+      document.getElementById("o").style.boxShadow="0px 0px 19px 0px rgba(255, 255, 255, 1)";
       document.getElementById(s).innerHTML = '<div class="crossL"></div><div class="crossR"></div>';
       mesh[n]='x';
     }else{
+      document.getElementById("o").style.boxShadow="0px 0px 0px 0px rgba(255, 255, 255, 1)";
+      document.getElementById("x").style.boxShadow="0px 0px 19px 0px rgba(255, 255, 255, 1)";
       document.getElementById(s).innerHTML = '<div class="circle"></div>';
       mesh[n]='o';
     }
@@ -84,5 +102,3 @@ function checkMesh(n,s){
     checkWin(n);
   }
 }
-
-
