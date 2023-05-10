@@ -24,26 +24,6 @@ function reset(){
   }
 }
 
-const btn0 = document.getElementById("s0");
-btn0.addEventListener("click", function(){checkMesh(0,"s0")});
-const btn1 = document.getElementById("s1");
-btn1.addEventListener("click", function(){checkMesh(1,"s1")});
-const btn2 = document.getElementById("s2");
-btn2.addEventListener("click", function(){checkMesh(2,"s2")});
-const btn3 = document.getElementById("s3");
-btn3.addEventListener("click", function(){checkMesh(3,"s3")});
-const btn4 = document.getElementById("s4");
-btn4.addEventListener("click", function(){checkMesh(4,"s4")});
-const btn5 = document.getElementById("s5");
-btn5.addEventListener("click", function(){checkMesh(5,"s5")});
-const btn6 = document.getElementById("s6");
-btn6.addEventListener("click", function(){checkMesh(6,"s6")});
-const btn7 = document.getElementById("s7");
-btn7.addEventListener("click", function(){checkMesh(7,"s7")});
-const btn8 = document.getElementById("s8");
-btn8.addEventListener("click", function(){checkMesh(8,"s8")});
-
-
 function afterGame(){
   document.getElementById("after").innerHTML='<div class="background">'+
                                               '<button id="newGame">new game</button>'
@@ -102,3 +82,22 @@ function checkMesh(n,s){
     checkWin(n);
   }
 }
+
+const btn0 = document.getElementById("s0");
+btn0.addEventListener("click", function(){checkMesh(0,"s0")});
+const btn1 = document.getElementById("s1");
+btn1.addEventListener("click", function(){checkMesh(1,"s1")});
+const btn2 = document.getElementById("s2");
+btn2.addEventListener("click", function(){checkMesh(2,"s2")});
+const btn3 = document.getElementById("s3");
+btn3.addEventListener("click", function(){checkMesh(3,"s3")});
+const btn4 = document.getElementById("s4");
+btn4.addEventListener("click", function(){checkMesh(4,"s4")});
+const btn5 = document.getElementById("s5");
+btn5.addEventListener("click", function(){checkMesh(5,"s5")});
+const btn6 = document.getElementById("s6");
+btn6.addEventListener("click", function(){checkMesh(6,"s6")});
+const btn7 = document.getElementById("s7");
+btn7.addEventListener("click", function(){checkMesh(7,"s7")});
+const btn8 = document.getElementById("s8");
+btn8.addEventListener("click", function(){checkMesh(8,"s8")});
